@@ -1,7 +1,23 @@
 package main
 
-import "log"
+import (
+	"html/template"
+)
+
+type Rsvp struct {
+	Name       string
+	Email      string
+	Phone      string
+	WillAttend bool
+}
+
+var responses = make([]*Rsvp, 0, 10)
+var templates = make(map[string]*template.Template, 3)
 
 func main() {
-	log.Println("partyinvites")
+	loadTemplates()
+}
+
+func loadTemplates() {
+	// TODO - load templates here
 }
